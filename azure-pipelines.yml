@@ -50,11 +50,11 @@ steps:
       mkdir '$(Build.SourcesDirectory)/GuestConfigurationProject/test'
       copy '$(Build.SourcesDirectory)/test/Resource.Tests.ps1' '$(Build.SourcesDirectory)/GuestConfigurationProject/test/Resource.Tests.ps1'
       
-      copy '$(Build.SourcesDirectory)/Configuration.mof' $(Build.SourcesDirectory)/GuestConfigurationProject/Configuration.mof'
-      copy '$(Build.SourcesDirectory)/GuestConfigurationProject.psd1' $(Build.SourcesDirectory)/GuestConfigurationProject/GuestConfigurationProject.psd1'
-      copy '$(Build.SourcesDirectory)/LICENSE' $(Build.SourcesDirectory)/GuestConfigurationProject/LICENSE'
-      copy '$(Build.SourcesDirectory)/plasterManifest.xml' $(Build.SourcesDirectory)/GuestConfigurationProject/plasterManifest.xml'
-      copy '$(Build.SourcesDirectory)/project.code-workspace' $(Build.SourcesDirectory)/GuestConfigurationProject/project.code-workspace'
+      copy '$(Build.SourcesDirectory)/Configuration.mof' '$(Build.SourcesDirectory)/GuestConfigurationProject/Configuration.mof'
+      copy '$(Build.SourcesDirectory)/GuestConfigurationProject.psd1' '$(Build.SourcesDirectory)/GuestConfigurationProject/GuestConfigurationProject.psd1'
+      copy '$(Build.SourcesDirectory)/LICENSE' '$(Build.SourcesDirectory)/GuestConfigurationProject/LICENSE'
+      copy '$(Build.SourcesDirectory)/plasterManifest.xml' '$(Build.SourcesDirectory)/GuestConfigurationProject/plasterManifest.xml'
+      copy '$(Build.SourcesDirectory)/project.code-workspace' '$(Build.SourcesDirectory)/GuestConfigurationProject/project.code-workspace'
 
       $params = @{
         Path        = '$(Build.SourcesDirectory)'

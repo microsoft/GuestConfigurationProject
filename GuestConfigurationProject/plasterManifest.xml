@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plasterManifest schemaVersion="1.1" templateType="Project" xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
+	<metadata>
+		<name>GuestConfigurationProject</name>
+		<id>c9f7a2c8-f9f0-4010-b641-8ee52230d664</id>
+		<version>1.0.0</version>
+		<title>Guest Configuration Project</title>
+		<description>Creates a new project for authoring a Guest Configuration package.</description>
+		<author>mgreenegit</author>
+		<tags>GuestConfigurationModule, GuestConfiguration, GC</tags>
+	</metadata>
+	<parameters>
+		<parameter name="ProjectName" type="text" prompt="Enter the name of the project" />
+		<parameter name="Version" type="text" prompt="Enter the version number of the module" default="0.1.0" />
+	</parameters>
+	<content>
+		<message>
+			&#10;&#10;Scaffolding your Guest Configuration project...&#10;&#10;&#10;
+		</message>
+		<newModuleManifest destination="Modules\${PLASTER_PARAM_ProjectName}\${PLASTER_PARAM_ProjectName}.psd1" moduleVersion="${PLASTER_PARAM_Version}" rootModule="" encoding="UTF8-NoBOM" openInEditor="true" />
+		<file source="Modules\Module\DSCResources\Resource\Resource.psm1" destination="Modules\${PLASTER_PARAM_ProjectName}\DSCResources\${PLASTER_PARAM_ProjectName}\${PLASTER_PARAM_ProjectName}.psm1" openInEditor="true" />
+		<file source="Modules\Module\DSCResources\Resource\Resource.schema.mof" destination="Modules\${PLASTER_PARAM_ProjectName}\DSCResources\${PLASTER_PARAM_ProjectName}\${PLASTER_PARAM_ProjectName}.schema.mof" openInEditor="true" />
+		<file source="Configuration.mof" destination="${PLASTER_PARAM_ProjectName}.mof" openInEditor="true" />
+		<templateFile source="test\Resource.Tests.ps1" destination="test\${PLASTER_PARAM_ProjectName}.Tests.ps1" />
+		<file source="editor\VSCode\settings.json" destination=".vscode\settings.json" />
+		<file source="editor\VSCode\tasks.json" destination=".vscode\tasks.json" />
+		<file source="project.code-workspace" destination="${PLASTER_PARAM_ProjectName}.code-workspace" />
+		<modify path="Modules\${PLASTER_PARAM_ProjectName}\${PLASTER_PARAM_ProjectName}.psd1" encoding="UTF8">
+			<replace>
+				<original># DscResourcesToExport = @\(\)</original>
+				<substitute expand="true">DscResourcesToExport = @('${PLASTER_PARAM_ProjectName}')</substitute>
+			</replace>
+		</modify>
+		<modify path="Modules\${PLASTER_PARAM_ProjectName}\DSCResources\${PLASTER_PARAM_ProjectName}\${PLASTER_PARAM_ProjectName}.schema.mof" encoding="UTF8">
+			<replace>
+				<original>PLASTER_PARAM_ProjectName</original>
+				<substitute expand="true">${PLASTER_PARAM_ProjectName}</substitute>
+			</replace>
+		</modify>
+		<modify path="${PLASTER_PARAM_ProjectName}.mof" encoding="UTF8">
+			<replace>
+				<original>PLASTER_PARAM_ProjectName</original>
+				<substitute expand="true">${PLASTER_PARAM_ProjectName}</substitute>
+			</replace>
+			<replace>
+				<original>PLASTER_PARAM_Version</original>
+				<substitute expand="true">${PLASTER_PARAM_Version}</substitute>
+			</replace>
+		</modify>
+		<requireModule name="Pester" minimumVersion="4.9.0" message="Without Pester, you will not be able to run the provided Pester test to validate your module manifest file.`nWithout version 4.0.3, VS Code will not display Pester warnings and errors in the Problems panel." />
+		<requireModule name="GuestConfiguration" minimumVersion="1.17.0" message="The Gues Configuration module includes cmdlets used by the Build task to create a package from your project." />
+		<message>Your new Guest Configuration resource module project '$PLASTER_PARAM_ModuleName' has been created.</message>
+		<message>A Pester test has been created to validate the module.  Add additional tests to the test directory.
+			You can run the Pester tests in your project by executing the 'test' task.  Press Ctrl+P, then type 'task test'.</message>
+	</content>
+</plasterManifest>

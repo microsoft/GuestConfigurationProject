@@ -1,0 +1,17 @@
+instance of PLASTER_PARAM_ProjectName as $PLASTER_PARAM_ProjectName
+{
+    ResourceID = "[PLASTER_PARAM_ProjectName]PLASTER_PARAM_ProjectName";
+    SourceInfo = "::5::5::PLASTER_PARAM_ProjectName";
+    ModuleName = "PLASTER_PARAM_ProjectName";
+    ModuleVersion = "PLASTER_PARAM_Version";
+    Property = "Value";
+    ConfigurationName = "PLASTER_PARAM_ProjectName";
+};
+
+instance of OMI_ConfigurationDocument
+{
+    Version = "2.0.0";
+    MinimumCompatibleVersion = "1.0.0";
+    CompatibleVersionAdditionalProperties = {"Omi_BaseResource:ConfigurationName"};
+    Name = "PLASTER_PARAM_ProjectName";
+};

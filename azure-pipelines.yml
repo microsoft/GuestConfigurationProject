@@ -50,11 +50,11 @@ steps:
       mkdir '$(Build.SourcesDirectory)/GuestConfigurationProject/test'
       copy '$(Build.SourcesDirectory)/test/Resource.Tests.ps1' '$(Build.SourcesDirectory)/GuestConfigurationProject/test/Resource.Tests.ps1'
       
-      copy Configuration.mof $(Build.SourcesDirectory)/GuestConfigurationProject/Configuration.mof'
-      copy GuestConfigurationProject.psd1 $(Build.SourcesDirectory)/GuestConfigurationProject/GuestConfigurationProject.psd1'
-      copy LICENSE $(Build.SourcesDirectory)/GuestConfigurationProject/LICENSE'
-      copy plasterManifest.xml $(Build.SourcesDirectory)/GuestConfigurationProject/plasterManifest.xml'
-      copy project.code-workspace $(Build.SourcesDirectory)/GuestConfigurationProject/project.code-workspace'
+      copy './Configuration.mof' $(Build.SourcesDirectory)/GuestConfigurationProject/Configuration.mof'
+      copy './GuestConfigurationProject.psd1' $(Build.SourcesDirectory)/GuestConfigurationProject/GuestConfigurationProject.psd1'
+      copy './LICENSE' $(Build.SourcesDirectory)/GuestConfigurationProject/LICENSE'
+      copy './plasterManifest.xml' $(Build.SourcesDirectory)/GuestConfigurationProject/plasterManifest.xml'
+      copy './project.code-workspace' $(Build.SourcesDirectory)/GuestConfigurationProject/project.code-workspace'
 
       $params = @{
         Path        = '$(Build.SourcesDirectory)'

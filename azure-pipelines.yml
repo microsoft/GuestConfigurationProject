@@ -42,10 +42,10 @@ steps:
       
       mkdir '$(Build.SourcesDirectory)/GuestConfigurationProject/Modules'
       mkdir '$(Build.SourcesDirectory)/GuestConfigurationProject/Modules/Module' 
-      mkdir '$(Build.SourcesDirectory)/GuestConfigurationProject/Modules/DSCResources'
-      mkdir '$(Build.SourcesDirectory)/GuestConfigurationProject/Modules/DSCResources/Resource'
-      copy '$(Build.SourcesDirectory)/Modules/DSCResources/Resource/Resource.psm1' '$(Build.SourcesDirectory)/GuestConfigurationProject/Modules/DSCResources/Resource/Resource.psm1'
-      copy '$(Build.SourcesDirectory)/Modules/DSCResources/Resource/Resource.Schema.mof' '$(Build.SourcesDirectory)/GuestConfigurationProject/Modules/DSCResources/Resource/Resource.Schema.mof'
+      mkdir '$(Build.SourcesDirectory)/GuestConfigurationProject/Modules/Module/DSCResources'
+      mkdir '$(Build.SourcesDirectory)/GuestConfigurationProject/Modules/Module/DSCResources/Resource'
+      copy '$(Build.SourcesDirectory)/Modules/Module/DSCResources/Resource/Resource.psm1' '$(Build.SourcesDirectory)/GuestConfigurationProject/Modules//Module/DSCResources/Resource/Resource.psm1'
+      copy '$(Build.SourcesDirectory)/Modules/Module/DSCResources/Resource/Resource.Schema.mof' '$(Build.SourcesDirectory)/GuestConfigurationProject/Modules/Module/DSCResources/Resource/Resource.Schema.mof'
       
       mkdir '$(Build.SourcesDirectory)/GuestConfigurationProject/test'
       copy '$(Build.SourcesDirectory)/test/Resource.Tests.ps1' '$(Build.SourcesDirectory)/GuestConfigurationProject/test/Resource.Tests.ps1'

@@ -63,6 +63,5 @@ steps:
       Get-ChildItem $(Build.SourcesDirectory)/GuestConfigurationProject/' -recurse
       
       Publish-Module @params
-    pwsh: false
+    pwsh: true
   displayName: 'Publish to Gallery'
-

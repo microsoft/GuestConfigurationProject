@@ -16,7 +16,7 @@ you will need to install the module from the
 [PowerShell Gallery](https://powershellgallery.com).
 This is easiest to do from PowerShell.
 
-> This tool has only been tested on PowerShell 7 preview
+> This tool has only been tested on PowerShell 7
 
 ```powershell
 Install-Module GuestConfigurationProject -repository PSGallery -force

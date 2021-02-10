@@ -16,7 +16,7 @@ you will need to install the module from the
 [PowerShell Gallery](https://powershellgallery.com).
 This is easiest to do from PowerShell.
 
-> This tool has only been tested on PowerShell 7 preview
+> This tool has only been tested on PowerShell 7.1
 
 ```powershell
 Install-Module GuestConfigurationProject -repository PSGallery -force
@@ -29,8 +29,7 @@ are not already available on the machine.
 - Pester
 - GuestConfiguration
 
-This module include task runners for the
-[VS Code](https://code.visualstudio.com/)
+This module includes task runners for the [VS Code](https://code.visualstudio.com/)
 editor.
 However, you could scaffold the project
 and then open it in the editor of your choice.
